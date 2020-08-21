@@ -2,6 +2,26 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <Version>0.1.0</Version>
+    <Authors>Tim Hanewich</Authors>
+    <Copyright>Tim Hanewich</Copyright>
+    <PackageLicenseFile>License.md</PackageLicenseFile>
+    <RepositoryUrl>https://github.com/TimHanewich/TimHanewich.Bing.Maps</RepositoryUrl>
+    <PackageIcon>BingIcon.png</PackageIcon>
+    <AssemblyVersion>0.0.0.0</AssemblyVersion>
+    <FileVersion>0.0.0.0</FileVersion>
+    <PackageTags>bing</PackageTags>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="BingIcon.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+    <None Include="License.md">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
 
 </Project>
