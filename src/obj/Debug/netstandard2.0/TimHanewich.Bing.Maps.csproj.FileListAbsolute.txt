@@ -1,0 +1,9 @@
+C:\Users\tihanewi\Downloads\TimHanewich.Bing.Maps\src\bin\Debug\netstandard2.0\TimHanewich.Bing.Maps.deps.json
+C:\Users\tihanewi\Downloads\TimHanewich.Bing.Maps\src\bin\Debug\netstandard2.0\TimHanewich.Bing.Maps.dll
+C:\Users\tihanewi\Downloads\TimHanewich.Bing.Maps\src\bin\Debug\netstandard2.0\TimHanewich.Bing.Maps.pdb
+C:\Users\tihanewi\Downloads\TimHanewich.Bing.Maps\src\obj\Debug\netstandard2.0\TimHanewich.Bing.Maps.csprojAssemblyReference.cache
+C:\Users\tihanewi\Downloads\TimHanewich.Bing.Maps\src\obj\Debug\netstandard2.0\TimHanewich.Bing.Maps.AssemblyInfoInputs.cache
+C:\Users\tihanewi\Downloads\TimHanewich.Bing.Maps\src\obj\Debug\netstandard2.0\TimHanewich.Bing.Maps.AssemblyInfo.cs
+C:\Users\tihanewi\Downloads\TimHanewich.Bing.Maps\src\obj\Debug\netstandard2.0\TimHanewich.Bing.Maps.csproj.CoreCompileInputs.cache
+C:\Users\tihanewi\Downloads\TimHanewich.Bing.Maps\src\obj\Debug\netstandard2.0\TimHanewich.Bing.Maps.dll
+C:\Users\tihanewi\Downloads\TimHanewich.Bing.Maps\src\obj\Debug\netstandard2.0\TimHanewich.Bing.Maps.pdb

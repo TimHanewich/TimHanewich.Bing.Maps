@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "FunctionalTesting/1.0.0": {
+        "dependencies": {
+          "TimHanewich.Bing.Maps": "1.0.0"
+        },
+        "runtime": {
+          "FunctionalTesting.dll": {}
+        }
+      },
+      "TimHanewich.Bing.Maps/1.0.0": {
+        "runtime": {
+          "TimHanewich.Bing.Maps.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "FunctionalTesting/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "TimHanewich.Bing.Maps/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
