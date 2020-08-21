@@ -186,11 +186,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\tihanewi\\Downloads\\TimHanewich.Bing.Maps\\TimHanewich.Bing.Maps.csproj",
+      "projectUniqueName": "C:\\Users\\tihanewi\\Downloads\\TimHanewich.Bing.Maps\\src\\TimHanewich.Bing.Maps.csproj",
       "projectName": "TimHanewich.Bing.Maps",
-      "projectPath": "C:\\Users\\tihanewi\\Downloads\\TimHanewich.Bing.Maps\\TimHanewich.Bing.Maps.csproj",
+      "projectPath": "C:\\Users\\tihanewi\\Downloads\\TimHanewich.Bing.Maps\\src\\TimHanewich.Bing.Maps.csproj",
       "packagesPath": "C:\\Users\\tihanewi\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\tihanewi\\Downloads\\TimHanewich.Bing.Maps\\obj\\",
+      "outputPath": "C:\\Users\\tihanewi\\Downloads\\TimHanewich.Bing.Maps\\src\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\"
