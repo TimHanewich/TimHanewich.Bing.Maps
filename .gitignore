@@ -1,4 +1,4 @@
-src/bin
-src/obj
-FunctionalTesting/bin
-FunctionalTesting/obj
+src/bin/
+src/obj/
+FunctionalTesting/bin/
+FunctionalTesting/obj/
