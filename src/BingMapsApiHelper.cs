@@ -55,7 +55,7 @@ namespace TimHanewich.Bing.Maps
         /// <summary>
         /// Calculates the distance in meters between two points on Earth.
         /// </summary>
-        static float HaversineDistance(float lat1, float lon1, float lat2, float lon2)
+        public static float HaversineDistance(float lat1, float lon1, float lat2, float lon2)
         {
             double earth_radius = 6371000;
             double n1 = lat1 * (Math.PI / 180);
