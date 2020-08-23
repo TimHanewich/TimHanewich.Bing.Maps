@@ -50,6 +50,26 @@ namespace TimHanewich.Bing.Maps
         }
 
         #endregion
-    
+
+        #region "Misc Tools"
+        /// <summary>
+        /// Calculates the distance in meters between two points on Earth.
+        /// </summary>
+        static float HaversineDistance(float lat1, float lon1, float lat2, float lon2)
+        {
+            double earth_radius = 6371000;
+            double n1 = lat1 * (Math.PI / 180);
+            double n2 = lat2 * (Math.PI / 180);
+            double d1 = (lat2 - lat1) * (Math.PI / 180);
+            double d2 = (lon2 - lon1) * (Math.PI / 180);
+
+            double a = (Math.Sin(d1/2) * Math.Sin(d1/2)) + (Math.Cos(n1) * Math.Cos(n2) * Math.Sin(d2/2) * Math.Sin(d2 / 2));
+            double c = 2 * (Math.Atan2(Math.Sqrt(a), Math.Sqrt(1-a)));
+            double d = earth_radius * c;
+            
+            return Convert.ToSingle(d);
+        }
+        #endregion
+
     }
 }
