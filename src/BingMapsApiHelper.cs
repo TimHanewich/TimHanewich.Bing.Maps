@@ -71,5 +71,29 @@ namespace TimHanewich.Bing.Maps
         }
         #endregion
 
+        #region "Elevation"
+
+        public async Task<float> GetElevationMetersAsync(float latitude, float longitude)
+        {
+            string url = "http://dev.virtualearth.net/REST/v1/Elevation/List?points=" + latitude.ToString() + "," + longitude.ToString() + "&key=" + ApiKey;
+            HttpClient hc = new HttpClient();
+            HttpResponseMessage hrm = await hc.GetAsync(url);
+            string web = await hrm.Content.ReadAsStringAsync();
+
+            //Strip out the elevation
+            int loc1 = web.IndexOf("elevations");
+            if (loc1 == -1)
+            {
+                throw new Exception("Fatal failure while acquiring elevation data for point " + latitude.ToString() + ", " + longitude.ToString());
+            }
+            loc1 = web.IndexOf("[", loc1 + 1);
+            int loc2 = web.IndexOf("]", loc1 + 1);
+            string num = web.Substring(loc1 + 1, loc2 - loc1 - 1);
+            float val = Convert.ToSingle(num);
+
+            return val;
+        }
+
+        #endregion
     }
 }
