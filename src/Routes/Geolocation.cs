@@ -1,6 +1,6 @@
 using System;
 
-namespace TimHanewich.Bing.Routes
+namespace TimHanewich.Bing.Maps.Routes
 {
     public struct Geolocation
     {

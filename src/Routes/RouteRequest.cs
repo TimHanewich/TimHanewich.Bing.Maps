@@ -2,7 +2,7 @@ using System;
 using System.IO;
 using System.Net.Http;
 
-namespace TimHanewich.Bing.Routes
+namespace TimHanewich.Bing.Maps.Routes
 {
     public class RouteRequest
     {

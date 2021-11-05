@@ -1,7 +1,7 @@
 using System;
 using System.IO;
 
-namespace TimHanewich.Bing.Routes
+namespace TimHanewich.Bing.Maps.Routes
 {
     public class RouteResponse
     {
