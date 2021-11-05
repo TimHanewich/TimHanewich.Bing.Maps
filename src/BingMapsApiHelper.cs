@@ -16,6 +16,14 @@ namespace TimHanewich.Bing.Maps
             _ApiKey = api_key;
         }
         
+        public string ApiKey
+        {
+            get
+            {
+                return _ApiKey;
+            }
+        }
+
         #region "Imagery"
 
         public async Task<Stream> DownloadPushpinsImageryAsync(BingMapsPushpinsImageryRequest request)
