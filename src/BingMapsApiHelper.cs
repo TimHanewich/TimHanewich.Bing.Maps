@@ -9,11 +9,11 @@ namespace TimHanewich.Bing.Maps
 {
     public class BingMapsApiHelper
     {
-        private string ApiKey;
+        private string _ApiKey;
 
         public BingMapsApiHelper(string api_key)
         {
-            ApiKey = api_key;
+            _ApiKey = api_key;
         }
         
         #region "Imagery"
@@ -35,7 +35,7 @@ namespace TimHanewich.Bing.Maps
             url = url + "mapsize=" + request.Width.ToString() + "," + request.Height.ToString() + "&";
 
             //Key
-            url = url + "key=" + ApiKey;
+            url = url + "key=" + _ApiKey;
 
 
             //Make the request and get the Stream
@@ -75,7 +75,7 @@ namespace TimHanewich.Bing.Maps
 
         public async Task<float> GetElevationMetersAsync(float latitude, float longitude)
         {
-            string url = "http://dev.virtualearth.net/REST/v1/Elevation/List?points=" + latitude.ToString() + "," + longitude.ToString() + "&key=" + ApiKey;
+            string url = "http://dev.virtualearth.net/REST/v1/Elevation/List?points=" + latitude.ToString() + "," + longitude.ToString() + "&key=" + _ApiKey;
             HttpClient hc = new HttpClient();
             HttpResponseMessage hrm = await hc.GetAsync(url);
             string web = await hrm.Content.ReadAsStringAsync();
