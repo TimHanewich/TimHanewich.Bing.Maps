@@ -62,7 +62,14 @@ namespace TimHanewich.Bing.Maps.Locations
                 JObject jo_address = JObject.Parse(jo_location.Property("address").Value.ToString());
                 lr.AddressLine = jo_address.Property("addressLine").Value.ToString();
                 lr.AdminDistrict = jo_address.Property("adminDistrict").Value.ToString();
-                lr.AdminDistrict2 = jo_address.Property("adminDistrict2").Value.ToString();
+                JProperty prop_adminDistrict2 = jo_address.Property("adminDistrict2");
+                if (prop_adminDistrict2 != null)
+                {
+                    if (prop_adminDistrict2.Value.Type != JTokenType.Null)
+                    {
+                        lr.AdminDistrict2 = jo_address.Property("adminDistrict2").Value.ToString();
+                    }
+                }
                 lr.CountryRegion = jo_address.Property("countryRegion").Value.ToString();
                 lr.FormattedAddress = jo_address.Property("formattedAddress").Value.ToString();
                 lr.Locality = jo_address.Property("locality").Value.ToString();
