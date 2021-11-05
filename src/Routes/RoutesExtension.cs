@@ -15,7 +15,7 @@ namespace TimHanewich.Bing.Maps.Routes
         {
             //construct the url
             string url = "http://dev.virtualearth.net/REST/v1/Routes?wayPoint.1=" + request.Departure.Latitude.ToString() + "," + request.Departure.Longitude.ToString() + "&waypoint.2=" + request.Destination.Latitude.ToString() + "," + request.Destination.Longitude.ToString() + "&key=" + bmah.ApiKey;
-            
+
             //Call
             HttpClient hc = new HttpClient();
             HttpResponseMessage resp = await hc.GetAsync(url);
@@ -28,17 +28,23 @@ namespace TimHanewich.Bing.Maps.Routes
             //Get the values
             string content = await resp.Content.ReadAsStringAsync();
             JObject jo = JObject.Parse(content);
-            JArray ja_resourceSets = JArray.Parse(jo.Property("resourceSets").ToString());
+            JArray ja_resourceSets = JArray.Parse(jo.Property("resourceSets").Value.ToString());
             if (ja_resourceSets.Count == 0)
             {
                 throw new Exception("resourceSets had 0 contents in the response");
             }
             JObject jo_firstResourceSet = JObject.Parse(ja_resourceSets[0].ToString());
+            JArray ja_resources = JArray.Parse(jo_firstResourceSet.Property("resources").Value.ToString());
+            if (ja_resources.Count == 0)
+            {
+                throw new Exception("No resources found.");
+            }
+            JObject jo_firstResource = JObject.Parse(ja_resources[0].ToString());
 
             RouteResponse response = new RouteResponse();
 
             //Get travel distance
-            JProperty property_travelDistance = jo_firstResourceSet.Property("travelDistance");
+            JProperty property_travelDistance = jo_firstResource.Property("travelDistance");
             if (property_travelDistance != null)
             {
                 if (property_travelDistance.Value.Type != JTokenType.Null)
@@ -48,7 +54,7 @@ namespace TimHanewich.Bing.Maps.Routes
             }
 
             //Get travel duration
-            JProperty property_travelDuration = jo_firstResourceSet.Property("travelDuration");
+            JProperty property_travelDuration = jo_firstResource.Property("travelDuration");
             if (property_travelDuration != null)
             {
                 if (property_travelDuration.Value.Type != JTokenType.Null)
@@ -58,7 +64,7 @@ namespace TimHanewich.Bing.Maps.Routes
             }
 
             //Get travel duration traffic
-            JProperty property_travelDurationTraffic = jo_firstResourceSet.Property("travelDurationTraffic");
+            JProperty property_travelDurationTraffic = jo_firstResource.Property("travelDurationTraffic");
             if (property_travelDurationTraffic != null)
             {
                 if (property_travelDurationTraffic.Value.Type != JTokenType.Null)
