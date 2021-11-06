@@ -20,7 +20,7 @@ namespace TimHanewich.Bing.Maps.Locations
             {
                 PostalCodePart = "&postalCode=" + req.PostalCode.Value.ToString();
             }
-            string url = "http://dev.virtualearth.net/REST/v1/Locations?addressLine=" + req.Address + PostalCodePart + "&key=ApCFwArsTxtHr9sct9Vq7gEIQ8aeP8oHaAwowqXkB7EqnYOUbGpDlMVWkgpSCCvJ";
+            string url = "https://dev.virtualearth.net/REST/v1/Locations?addressLine=" + req.Address + PostalCodePart + "&key=ApCFwArsTxtHr9sct9Vq7gEIQ8aeP8oHaAwowqXkB7EqnYOUbGpDlMVWkgpSCCvJ";
         
             //Request
             HttpClient hc = new HttpClient();
