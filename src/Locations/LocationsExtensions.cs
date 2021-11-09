@@ -18,7 +18,7 @@ namespace TimHanewich.Bing.Maps.Locations
             string url = null;
             if (req.Latitude.HasValue && req.Longitude.HasValue)
             {
-                url = "http://dev.virtualearth.net/REST/v1/Locations/" + req.Latitude.Value.ToString() + "," + req.Longitude.Value.ToString() + "?key=" + bmah.ApiKey;
+                url = "https://dev.virtualearth.net/REST/v1/Locations/" + req.Latitude.Value.ToString() + "," + req.Longitude.Value.ToString() + "?key=" + bmah.ApiKey;
             }
             else
             {
