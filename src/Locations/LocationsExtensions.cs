@@ -15,13 +15,22 @@ namespace TimHanewich.Bing.Maps.Locations
         public static async Task<LocationsResponse> GetLocationsAsync(this BingMapsApiHelper bmah, LocationsRequest req)
         {
             //Format the url
-            string PostalCodePart = ""; //will be blank if there isn't one.
-            if (req.PostalCode.HasValue)
+            string url = null;
+            if (req.Latitude.HasValue && req.Longitude.HasValue)
             {
-                PostalCodePart = "&postalCode=" + req.PostalCode.Value.ToString();
+                url = "http://dev.virtualearth.net/REST/v1/Locations/" + req.Latitude.Value.ToString() + "," + req.Longitude.Value.ToString() + "?key=" + bmah.ApiKey;
             }
-            string url = "https://dev.virtualearth.net/REST/v1/Locations?addressLine=" + req.Address + PostalCodePart + "&key=ApCFwArsTxtHr9sct9Vq7gEIQ8aeP8oHaAwowqXkB7EqnYOUbGpDlMVWkgpSCCvJ";
-        
+            else
+            {
+                string PostalCodePart = ""; //will be blank if there isn't one.
+                if (req.PostalCode.HasValue)
+                {
+                    PostalCodePart = "&postalCode=" + req.PostalCode.Value.ToString();
+                }
+                url = "https://dev.virtualearth.net/REST/v1/Locations?addressLine=" + req.Address + PostalCodePart + "&key=ApCFwArsTxtHr9sct9Vq7gEIQ8aeP8oHaAwowqXkB7EqnYOUbGpDlMVWkgpSCCvJ";
+            
+            }
+            
             //Request
             HttpClient hc = new HttpClient();
             HttpResponseMessage resp = await hc.GetAsync(url);
