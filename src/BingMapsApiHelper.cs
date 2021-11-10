@@ -42,8 +42,16 @@ namespace TimHanewich.Bing.Maps
             //Size of the image
             url = url + "mapsize=" + request.Width.ToString() + "," + request.Height.ToString() + "&";
 
+            //Zoom level
+            if (request.ZoomLevel > 0 && request.ZoomLevel <= 20)
+            {
+                url = url + "zoomlevel=" + request.ZoomLevel.ToString() + "&";
+            }
+
             //Key
             url = url + "key=" + _ApiKey;
+            
+            
 
 
             //Make the request and get the Stream
